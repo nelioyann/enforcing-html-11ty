@@ -1,0 +1,24 @@
+{
+  "name": "enforcing-html-best-practices",
+  "version": "1.0.0",
+  "description": "Enforcing HTML best practices with 11ty, by using macros",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelioyann/enforcing-html-best-practices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelioyann/enforcing-html-best-practices/issues"
+  },
+  "homepage": "https://github.com/nelioyann/enforcing-html-best-practices#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}
