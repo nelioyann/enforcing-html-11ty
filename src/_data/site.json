@@ -1,0 +1,13 @@
+{
+  "title": "HTML Practices",
+  "description": "Enforcing HTML best practices in Eleventy",
+  "url": "https://yannicknana.fr/",
+  "language": "en",
+  "author": {
+    "name": "Yannick",
+    "email": "hello@yannicknana.fr",
+    "url": "https://yannicknana.fr/",
+    "twitter": "nelioyann",
+    "facebook": "nelioyann"
+  }
+}

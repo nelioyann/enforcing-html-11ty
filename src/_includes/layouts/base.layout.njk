@@ -1,0 +1,16 @@
+{%- from "components/component.njk" import component -%}
+<!DOCTYPE html>
+<html lang="{{site.language}}">
+    <head>
+        {% include "partials/head.partial.njk" %}
+    </head>
+    <body>
+        <header></header>
+        <main id="main-content">
+            {% block main %}
+                {{ main | safe }}
+            {% endblock %}
+        </main>
+        <footer></footer>
+    </body>
+</html>
