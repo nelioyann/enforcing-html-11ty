@@ -1,0 +1,13 @@
+{# <button type="{{params.type}}">{{ params.label }}</button> #}
+<a 
+    {% if params.href  %} href="{{params.href}}" {% endif %}
+    {% if params.target  %} href="{{params.target}}" {% endif %}
+    {% if params.ariaLabel  %} href="{{params.ariaLabel}}" {% endif %}    
+    {% if params.href === params.page.url %} aria-current="page" {% endif %}
+    >
+    {% if params.label  %} 
+    {{params.label}}
+    {% elif params.content%}
+    {{params.content | safe}}
+    {% endif %}
+</a>

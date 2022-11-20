@@ -5,12 +5,16 @@
         {% include "partials/head.partial.njk" %}
     </head>
     <body>
-        <header></header>
+        <header>
+            {% include "partials/navigation.partial.njk" %}
+        </header>
         <main id="main-content">
-            {% block main %}
-                {{ main | safe }}
+            {% block content %}
+                {{ content | safe }}
             {% endblock %}
         </main>
-        <footer></footer>
+        <footer>
+            {% include "partials/footer.partial.njk" %}
+        </footer>
     </body>
 </html>

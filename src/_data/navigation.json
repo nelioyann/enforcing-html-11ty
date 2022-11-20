@@ -1,0 +1,12 @@
+{
+    "items": [
+        {
+            "url": "/",
+            "name": "Homepage"
+        },
+        {
+            "url": "/about",
+            "name": "About"
+        }
+    ]
+}

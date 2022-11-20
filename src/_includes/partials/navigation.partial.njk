@@ -1,0 +1,9 @@
+<nav aria-label="main-navigation">
+        <ul role="list">
+            {% for item in collections.navigation %}
+                <li>
+                {{ component('link', {label: item.data.title, href: item.url, page: page}) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>

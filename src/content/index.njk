@@ -1,8 +1,18 @@
 ---
+    title: Enforcing HTML practices
+    tags: 
+        - navigation
     permalink: "/"
 ---
 
 {% extends "layouts/base.layout.njk" %}
-{% block main %}
-    {{ component('button', {label: 'Hello', type: 'button'}) }}
+{% block content %}
+    <hgroup>
+        <h1>{{ title }}</h1>
+        <p>{{ site.description }}</p>
+    </hgroup>
+    {# {{ component('button', {label: 'Hello', type: 'button'}) }}
+    {{ component(
+        'link', {label: "I am a link", href: "/", page: page}
+    ) }} #}
 {% endblock %}
