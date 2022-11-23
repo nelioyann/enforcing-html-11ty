@@ -15,4 +15,8 @@
     {{ component(
         'link', {label: "I am a link", href: "/", page: page}
     ) }} #}
+    <ul class="grid">
+        {{component("card", {element: 'li', title: site.title, url: "#", description: site.description})}}
+        {{component("card", {element: 'li', title: site.title, url: "#"})}}
+    </ul>
 {% endblock %}

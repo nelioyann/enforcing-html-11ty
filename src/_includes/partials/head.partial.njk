@@ -1,13 +1,20 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block title %}
-  {% if page.url == '/' %}
-    {% set page_title %}{{ site.title }}, {{ site.description }}{% endset %}
-  {% else %}
-    {% set page_title %}{{ title }} — {{ site.title }}{% endset %}
-  {% endif %}
-  <title>{{ page_title }}</title>
-  <meta property="og:title" content="{{ page_title }}" />
-{% endblock %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}
+      {% set page_title = [site.title, site.description] | join(", ") if (page.url == '/') else[title, site.title] | join(" - ") %}
+      <title>{{ page_title }}</title>
+      <meta property="og:title" content="{{ page_title }}"/>
+    {% endblock %}
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
