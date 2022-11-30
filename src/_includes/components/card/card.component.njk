@@ -1,5 +1,5 @@
 {# Default values #}
-{% set headingElement = params.headingElement or 'h2' %}
+{% set headingElement = (params.headingElement | enforce) if params.title %}
 {% set element = params.element or 'li'%}
 {% set imageAlt = params.imageAlt or ''%}
 {% set url = params.url or '#' %}
@@ -12,7 +12,8 @@
 
 {# Component template #}
 {# - The image is considered decorative as the title already provides enough information. Avoid redundant content -> aria-hidden #}
-<{{element}} class="card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+{# - When a title is provided, the heading level must be provided #}
+<li class="card">
     {%if params.imageUrl%}
         <img aria-hidden="true" src="{{params.imageUrl}}" alt="{{imageAlt}}"/>
     {%endif%}
@@ -35,41 +36,3 @@
     {%endif%}
     </div>
 </{{element}}>
-
-
-<style>
-    .card{
-        border: 1px solid;
-        border-radius: 0.25rem;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-    }
-    .card:hover{
-        box-shadow: 0 0 0 0.25em;
-    }
-    .card a:focus{
-        text-decoration: underline;
-    }
-    .card a:focus-visible{
-        outline: none;
-    }
-    .card:focus-within{
-        box-shadow: 0 0 0 0.25em;
-        outline: 2px solid transparent;
-    }
-    .card:focus-within a:focus{
-        text-decoration: none;
-    }
-    .card__text{
-    display: flex;
-        flex-direction: column;
-        padding: 0.25rem;
-    }
-    .card p{
-        flex-grow: 1;
-    }
-    .card .card__text > * + *{
-        margin-top: 0.75rem;
-    }
-</style>

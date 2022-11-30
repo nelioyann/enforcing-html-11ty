@@ -1,1 +1,3 @@
-<button type="{{params.type}}">{{ params.label }}</button>
+{% set label = params.label | enforce %}
+{% set type = params.type or "button"%}
+<button type="{{ type }}">{{ label }}</button>

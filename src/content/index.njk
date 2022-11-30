@@ -1,5 +1,6 @@
 ---
     title: Enforcing HTML practices
+    description: Showcasing various implementations
     tags: 
         - navigation
     permalink: "/"
@@ -9,14 +10,32 @@
 {% block content %}
     <hgroup>
         <h1>{{ title }}</h1>
-        <p>{{ site.description }}</p>
+        <p>{{ description }}</p>
     </hgroup>
-    {# {{ component('button', {label: 'Hello', type: 'button'}) }}
-    {{ component(
-        'link', {label: "I am a link", href: "/", page: page}
-    ) }} #}
-    <ul class="grid">
-        {{component("card", {element: 'li', title: site.title, url: "#", description: site.description})}}
-        {{component("card", {element: 'li', title: site.title, url: "#"})}}
-    </ul>
+    <section>
+        <h2>Button component</h2>
+        {{ component('button', {label: 'Hello', type: 'button'}) }}
+    </section>
+    <section>
+        <h2>Link component</h2>
+        <nav>
+            {{ component("link", {label: "Go to home", href: "/", page: page}) }}
+            {{ component('link', {label: "Go to about", href: "/about", page: page}) }}
+        </nav>
+    </section>
+    <section>
+        <h2>Card components</h2>
+        <ul class="grid">
+            {{ component("card", {title: "Home", url: "/", headingElement: "h3"}) }}
+            {{ component("card", {title: "About", url: "/about", headingElement: "h3"}) }}
+        </ul>
+    </section>
+    <section>
+        <h2>Field components</h2>
+        <form name="showcase">
+            {{ component("field", {label: "Email", inputId: "email", inputType: "email", inputName: "email", required: false}) }}
+            {{ component("field", {label: "Name", inputId: "name", inputType: "text", inputName: "name", required: true}) }}
+            {{ component("field", {label: "Password", inputId: "password", inputType: "password", inputName: "password", required: true}) }}
+        </form>
+    </section>
 {% endblock %}
