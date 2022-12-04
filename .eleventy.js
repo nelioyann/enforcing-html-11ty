@@ -1,5 +1,6 @@
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addNunjucksFilter("enforce", function(value) {
+
+    eleventyConfig.addNunjucksFilter("enforced", function(value) {
         if(value === undefined){
             throw "A parameter is missing"
         }

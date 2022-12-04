@@ -1,3 +1,5 @@
-{% set label = params.label | enforce %}
+{# Destructring pamareters #}
+{% set label = params.label %}
 {% set type = params.type or "button"%}
-<button type="{{ type }}">{{ label }}</button>
+
+<button type="{{ type }}">{{ label | enforced }}</button>

@@ -1,5 +1,16 @@
-<a {% if params.href %} href="{{ params.href }}" {% endif %} {% if params.target %} href="{{ params.target }}" {% endif %} {% if params.ariaLabel %} href="{{ params.ariaLabel }}" {% endif %} {% if params.href === params.page.url %} aria-current="page" {% endif %}>
-    {% if params.label -%}
-        {{ params.label }}
-    {% endif -%}
+{% set label = params.label | enforced %}
+{% set href = params.href | enforced %}
+{% set target = params.target %}
+{% set page = params.page %}
+{% set ariaLabel = params.ariaLabel %}
+
+<a 
+{% if href %} href="{{ href }}" {% endif %} 
+{% if target %} href="{{ target }}" {% endif %} 
+{% if ariaLabel %} href="{{ ariaLabel }}" {% endif %} 
+{% if href == page.url %} aria-current="page" {% endif %}
+>
+    {% if label %}
+        {{ label }}
+    {% endif %}
 </a>

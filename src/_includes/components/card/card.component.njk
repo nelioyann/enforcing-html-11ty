@@ -1,5 +1,5 @@
 {# Default values #}
-{% set headingElement = (params.headingElement | enforce) if params.title %}
+{% set headingElement = (params.headingElement | enforced) if params.title %}
 {% set element = params.element or 'li'%}
 {% set imageAlt = params.imageAlt or ''%}
 {% set url = params.url or '#' %}
@@ -7,7 +7,7 @@
 {% set description = params.description %}
 {% set title = params.title %}
 {% set time = params.time %}
-{% set imageAlt = params.imageUrl%}
+{% set imageUrl = params.imageUrl  %}
 
 
 {# Component template #}
@@ -15,7 +15,7 @@
 {# - When a title is provided, the heading level must be provided #}
 <li class="card">
     {%if params.imageUrl%}
-        <img aria-hidden="true" src="{{params.imageUrl}}" alt="{{imageAlt}}"/>
+        <img aria-hidden="true" src="{{imageUrl}}" alt="{{imageAlt}}"/>
     {%endif%}
     <div class="card__text">
     {# Dynamic heading level #}

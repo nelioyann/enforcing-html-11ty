@@ -1,7 +1,7 @@
 {# Required values #}
-{% set inputId = params.inputId | enforce %}
-{% set inputName = params.inputName | enforce %}
-{% set label = params.label | enforce %}
+{% set inputId = params.inputId | enforced %}
+{% set inputName = params.inputName %}
+{% set label = params.label %}
 {# Optional values #}
 {% set inputType = params.inputType or "text" %}
 {% set required = params.required %}
@@ -9,9 +9,9 @@
 
 {# Mark optional fields instead of required ones #}
 <label for="{{ inputId }}">
-    {{ label }}
+    {{ label | enforced }}
     {% if not required %}
         <span class="sr-only">(Optional)</span>
     {% endif %}
 </label>
-<input type="{{ inputType }}" id="{{ inputId }}" name="{{ inputName }}" {% if autocomplete %} autocomplete="{{ autocomplete }}" {% endif %} {% if required %} required {% endif %}>
+<input type="{{ inputType }}" id="{{ inputId }}" name="{{ inputName | enforced }}" {% if autocomplete %} autocomplete="{{ autocomplete }}" {% endif %} {% if required %} required {% endif %}>
