@@ -11,9 +11,10 @@
       }
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
         grid-column-gap: 1.5rem;
-        grid-row-gap: 1.5rem;
+        grid-row-gap: 0.5rem;
+        padding-left: 0;
       }
       .card {
         border: 1px solid;
@@ -21,12 +22,21 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        position: relative;
+      }
+      .card a:hover{
+      text-decoration: none;
       }
       .card:hover {
         box-shadow: 0 0 0 0.25em;
       }
-      .card a:focus {
-        text-decoration: underline;
+      .card a:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
       .card a:focus-visible {
         outline: none;

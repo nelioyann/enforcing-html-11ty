@@ -1,5 +1,6 @@
 ---
     title: About
+    description: Links and attributions
     tags: 
         - navigation
     permalink: /about/

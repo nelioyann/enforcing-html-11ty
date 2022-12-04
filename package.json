@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
-    "start:dev": "set ELEVENTY_ENV=development & eleventy --serve",
+    "start:dev": "set ELEVENTY_ENV=development& npm start",
     "a11y": "evaluatory --sitemap http://localhost:8080/sitemap.xml"
 
   },
