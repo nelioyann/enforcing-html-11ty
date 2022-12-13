@@ -1,6 +1,5 @@
 {# Default values #}
 {% set headingElement = (params.headingElement | enforced) if params.title %}
-{% set element = params.element or 'li'%}
 {% set imageAlt = params.imageAlt or ''%}
 {% set url = params.url or '#' %}
 {# Optional Values #}
@@ -9,15 +8,16 @@
 {% set time = params.time %}
 {% set imageUrl = params.imageUrl  %}
 
+{# Advanced #}
+{% set a = "Title is redundant with alt text" | enforced(true) if title === imageAlt%}
 
 {# Component template #}
 {# - The image is considered decorative as the title already provides enough information. Avoid redundant content -> aria-hidden #}
 {# - When a title is provided, the heading level must be provided #}
-<li class="card">
+<article class="card">
     {%if params.imageUrl%}
         <img aria-hidden="true" src="{{imageUrl}}" alt="{{imageAlt}}"/>
     {%endif%}
-    <div class="card__text">
     {# Dynamic heading level #}
     {%if title%}
         <{{headingElement}}>
@@ -34,5 +34,4 @@
     {%if time%}
         <time datetime="{{time}}" itemprop="datePublished">{{time}}</time>
     {%endif%}
-    </div>
-</{{element}}>
+</article>

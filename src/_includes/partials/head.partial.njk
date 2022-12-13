@@ -19,10 +19,12 @@
       .card {
         border: 1px solid;
         border-radius: 0.25rem;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         cursor: pointer;
         position: relative;
+        padding: 0.25rem 1rem;
+        margin: 0.25rem;
       }
       .card a:hover{
       text-decoration: none;
@@ -48,16 +50,9 @@
       .card:focus-within a:focus {
         text-decoration: none;
       }
-      .card__text {
-        display: flex;
-        flex-direction: column;
-        padding: 0.25rem;
-      }
       .card p {
         flex-grow: 1;
       }
-      .card .card__text > * + * {
-        margin-top: 0.75rem;
-      }
+
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
